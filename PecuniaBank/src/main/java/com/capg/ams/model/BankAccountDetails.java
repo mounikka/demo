@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.sun.istack.NotNull;
+
 import javax.persistence.OneToOne;
 
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -18,13 +20,17 @@ public class BankAccountDetails {
 	@Id
 	@GeneratedValue
 	private long accNumber;
+	@NotNull
 	private String accountType;
 	private double accountInterest;
 	private double accountBalance;
+	@NotNull
 	private String accountBranchId;
+	@NotNull
 	private String customerName;
 	private long customerPhno;
 	private String accStatus;
+	@NotNull
 	private long customerAdharId;
 	private String customerPancard;
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
