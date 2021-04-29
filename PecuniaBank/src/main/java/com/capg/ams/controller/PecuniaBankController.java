@@ -41,7 +41,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/pecuniabank")
+@RequestMapping("/accounts")
 class PecuniaBankController {
 	@Autowired
 	PecuniaBankService service;
@@ -111,7 +111,7 @@ class PecuniaBankController {
      ******************************************/
 	
 	@GetMapping("/get/accNum/{accNumber}")
-	public BankAccountDetails getById(@PathVariable("accNumber") Long accNumber) throws AccountNotFoundException {
+	public BankAccountDetails getById(@PathVariable("accNumber") Long accNumber)throws AccountNotFoundException {
 		return service.getById(accNumber);
 		
 	}

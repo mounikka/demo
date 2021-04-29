@@ -34,10 +34,13 @@ class PecuniaBankApplicationTests {
 	@InjectMocks
 	private PecuniaBankService ser;
 	
-	@Before
-	public void setup() {
-		MockitoAnnotations.initMocks(this);
-	}
+	
+	  @Before 
+	  public void setup() 
+	  { 
+		  MockitoAnnotations.initMocks(this);
+	  }
+	 
 	@Test
 	public void addAccountTest() throws Exception {
 		BankAccountDetails accountt=mock(BankAccountDetails.class);
@@ -45,11 +48,8 @@ class PecuniaBankApplicationTests {
 		verify(repo).save(accountt);	
 		}
 	
-	@Test
-public void getAllAccountsTest()throws Exception{
-		ser.getAllAccounts();
-		verify(repo).findAll();
-	}
+	
+	
 	}
 	
 	
